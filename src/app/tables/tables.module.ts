@@ -7,6 +7,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import {LoadSpinnerModule} from '../load-spinner/load-spinner.module';
 import { AlertModule } from '../shared/alert/alert.module';
+import { ProcessDiagramComponent } from './process-diagram/process-diagram.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +15,6 @@ import { AlertModule } from '../shared/alert/alert.module';
     LoadSpinnerModule,
     AlertModule
   ],
-  declarations: [ TablesComponent, UserDetailComponent, SearchFilterPipe]
+  declarations: [ TablesComponent, UserDetailComponent, SearchFilterPipe,ProcessDiagramComponent]
 })
 export class TablesModule { }

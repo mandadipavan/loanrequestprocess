@@ -38,7 +38,7 @@ export class TablesComponent implements OnInit {
     await this.dataSourceService.fetchReviewUsers();
   }
 
-  async onShowDiagram(processInstanceId:String){
+   onShowDiagram(processInstanceId:String){
   // await this.dataSourceService.getFlowDiagram(processInstanceId).subscribe(
   //   data=>{
   //     this.image=data;
@@ -48,11 +48,15 @@ export class TablesComponent implements OnInit {
   //      console.log("img",this.image);
   //   });
   //  //console.log(this.diagram);
-this.imageUrl = 'http://localhost:8083/springboot-flowable-service/process/runtime/process-instances/'+processInstanceId+'/diagram';
-  console.log("image url",this.imageUrl);
-  this.showDiagram=true;
+ this.imageUrl = 'http://localhost:8083/springboot-flowable-service/process/runtime/process-instances/'+processInstanceId+'/diagram';
+//   console.log("image url",this.imageUrl);
+//   this.showDiagram=true;
+ 
   }
-  onClose(){
-    this.showDiagram=false;
+  // onClose(){
+  //   this.showDiagram=false;
+  // }
+  handleCloseDiagram(){
+    this.imageUrl=null;
   }
 }

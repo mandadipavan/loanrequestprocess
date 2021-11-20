@@ -8,19 +8,21 @@
         <div class="panel panel-default">
           <div class="panel-heading panel-heading-no-divider">Table Striped<span class="panel-subtitle">Table with alternative shades for order and even rows </span></div>
           <!--  <app-load-spinner></app-load-spinner> -->
-           <div *ngIf="showDiagram">
+           <!-- <div *ngIf="showDiagram">
             <h3>The Image is </h3>
               <button class="btn btn-danger pull-right" (click)="onClose()">Close</button>
             <img [src]="imageUrl" class="image-responsive" />
           
-          </div>
+          </div> -->
+          <app-process-diagram [imgUrl]="imageUrl" *ngIf="imageUrl" (closeDiagram)="handleCloseDiagram()"></app-process-diagram>
           <div class="pull-left">
             <button class="btn btn-primary" (click)="fetchNewUsers()">Update List</button>
+            <!-- <app-process-diagram></app-process-diagram> -->
           </div>
 
             <div class="form-group pull-right">
-               <label for="search">Search to Filter:</label>&nbsp;
-               <input type="text"placeholder="Enter String to Search..." 
+               <label for="search">Enter String to Filter:</label>&nbsp;
+               <input type="text"placeholder="Enter String to Filter..." 
                 class="form-control" [value]="search" (input)="search=$event.target.value">
              </div>
 
@@ -42,7 +44,7 @@
                       <td>{{user[0].customerId}}</td>
                       <td>{{user[0].firstname}} {{user[0].lastname}}</td>
                       <td>{{user[0].status}}</td>
-                      <td>{{user[0].processInstanceId}}</td>
+                      <td>{{user[0].loantype}}</td>
 
                       <td>
                        {{user[0].loanamount}}
